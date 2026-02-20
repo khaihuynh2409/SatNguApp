@@ -13,16 +13,33 @@ namespace SatNguApp.Mobile.ViewModels
     {
         private readonly BackendService _backendService;
         private ComboRecommendationResponse _recommendation;
+        private BiorhythmResponse _biorhythm;
         private bool _isLoading;
         private string _locationText = "Đang tìm vị trí...";
+
+        public BiorhythmResponse Biorhythm
+        {
+            get => _biorhythm;
+            set
+            {
+                _biorhythm = value;
+                OnPropertyChanged();
+            }
+        }
 
         public MainViewModel()
         {
             _backendService = new BackendService();
             LoadRecommendationCommand = new Command(async () => await LoadDataAsync());
             
-            // Auto load on init
-            Task.Run(async () => await LoadDataAsync());
+            // Safe auto-load: trigger after UI is initialized
+            InitializeAsync();
+        }
+
+        private async void InitializeAsync()
+        {
+            await Task.Delay(500); // Give time for UI to settle
+            await LoadDataAsync();
         }
 
         public ICommand LoadRecommendationCommand { get; }
@@ -90,6 +107,9 @@ namespace SatNguApp.Mobile.ViewModels
                     if (Recommendation != null && Recommendation.Recommendation != null)
                     {
                         ScheduleDailyNotification(Recommendation.Recommendation);
+                        
+                        // 3. Fetch Biorhythm (Mock fish ID 1 for now or find ID)
+                        Biorhythm = await _backendService.GetBiorhythmAsync(1);
                     }
                 }
                 else

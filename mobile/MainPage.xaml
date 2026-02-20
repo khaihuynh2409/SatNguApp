@@ -3,58 +3,134 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:SatNguApp.Mobile.ViewModels"
              x:Class="SatNguApp.Mobile.MainPage"
-             Title="Sát Ngư App - Dashboard">
+             BackgroundColor="#0B132B"
+             Title="SÁT NGƯ - TRỢ LÝ CẦN THỦ">
 
     <ContentPage.BindingContext>
         <viewmodels:MainViewModel />
     </ContentPage.BindingContext>
 
-    <ScrollView>
-        <VerticalStackLayout Padding="30,0" Spacing="25">
-            <Label Text="Gợi Ý Lên Đồ" 
-                   Style="{StaticResource Headline}"
-                   SemanticProperties.HeadingLevel="Level1" />
+    <Grid RowDefinitions="Auto, *">
+        <!-- Header -->
+        <Border Grid.Row="0" BackgroundColor="#1C2541" Padding="20" StrokeThickness="0">
+            <VerticalStackLayout Spacing="5">
+                <Label Text="SÁT NGƯ APP" 
+                       TextColor="#FFD700" 
+                       FontSize="28" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center" />
+                <Label Text="{Binding LocationText}" 
+                       TextColor="#5BC0BE" 
+                       FontSize="12" 
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+        </Border>
 
-            <Label Text="{Binding LocationText}" 
-                   Style="{StaticResource SubHeadline}" />
-                   
-            <ActivityIndicator IsRunning="{Binding IsLoading}" 
-                               IsVisible="{Binding IsLoading}"
-                               Color="{StaticResource Primary}" />
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="20" Spacing="20">
+                
+                <ActivityIndicator IsRunning="{Binding IsLoading}" 
+                                   IsVisible="{Binding IsLoading}"
+                                   Color="#FFD700" 
+                                   HeightRequest="50" />
 
-            <Border StrokeShape="RoundRectangle 10" 
-                    StrokeThickness="2" 
-                    IsVisible="{Binding HasData}"
-                    Background="#202020"
-                    Padding="20">
-                <VerticalStackLayout Spacing="15">
-                    <Label Text="🎣 Mục Tiêu" FontAttributes="Bold" FontSize="18" TextColor="{StaticResource Primary}" />
-                    <Label Text="{Binding Recommendation.Recommendation.Fish_Target}" FontSize="16" />
-                    
-                    <BoxView HeightRequest="1" Color="Gray" />
-                    
-                    <Label Text="⚙️ Đồ Câu (Cần, Máy, Trục, Thẻo)" FontAttributes="Bold" FontSize="18" TextColor="{StaticResource Primary}" />
-                    <Label Text="{Binding Recommendation.Recommendation.Gear}" FontSize="16" />
-                    
-                    <BoxView HeightRequest="1" Color="Gray" />
-                    
-                    <Label Text="🪱 Mồi Câu Khuyên Dùng" FontAttributes="Bold" FontSize="18" TextColor="{StaticResource Primary}" />
-                    <Label Text="{Binding Recommendation.Recommendation.Bait}" FontSize="16" />
-                    
-                    <BoxView HeightRequest="1" Color="Gray" />
-                    
-                    <Label Text="🌥️ Thời Tiết Xung Quanh" FontAttributes="Bold" FontSize="18" TextColor="{StaticResource Secondary}" />
-                    <Label Text="{Binding Recommendation.Context.Temperature, StringFormat='Nhiệt độ: {0}°C'}" FontSize="14" />
-                    <Label Text="{Binding Recommendation.Context.Weather_Condition, StringFormat='Trời: {0}'}" FontSize="14" />
-                    <Label Text="{Binding Recommendation.Context.Tide_Condition, StringFormat='Con nước: {0}'}" FontSize="14" />
-                </VerticalStackLayout>
-            </Border>
+                <!-- Recommendation Card -->
+                <Border StrokeShape="RoundRectangle 20" 
+                        StrokeThickness="0" 
+                        IsVisible="{Binding HasData}"
+                        BackgroundColor="#1C2541"
+                        Padding="25">
+                    <VerticalStackLayout Spacing="20">
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="🎯" FontSize="24" />
+                            <VerticalStackLayout>
+                                <Label Text="MỤC TIÊU HÔM NAY" TextColor="#6FFFE9" FontSize="12" FontAttributes="Bold" />
+                                <Label Text="{Binding Recommendation.Recommendation.Fish_Target}" TextColor="White" FontSize="20" FontAttributes="Bold" />
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
 
-            <Button Text="Làm mới Gợi ý" 
-                    Command="{Binding LoadRecommendationCommand}"
-                    IsEnabled="{Binding IsLoading, Converter={x:StaticResource InvertedBoolConverter}}"
-                    SemanticProperties.Hint="Lấy tọa độ mới và tải lại gợi ý" />
-        </VerticalStackLayout>
-    </ScrollView>
+                        <BoxView HeightRequest="1" Color="#3A506B" />
 
-</ContentPage>
+                        <VerticalStackLayout Spacing="8">
+                            <Label Text="🎣 BỘ ĐỒ CÂU TỐI ƯU" TextColor="#FFD700" FontSize="14" FontAttributes="Bold" />
+                            <Label Text="{Binding Recommendation.Recommendation.Gear}" TextColor="White" FontSize="15" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Spacing="8">
+                            <Label Text="🪱 BÍ QUYẾT MỒI CÂU" TextColor="#FFD700" FontSize="14" FontAttributes="Bold" />
+                            <Label Text="{Binding Recommendation.Recommendation.Bait}" TextColor="White" FontSize="15" />
+                        </VerticalStackLayout>
+
+                        <Border BackgroundColor="#0B132B" Padding="15" StrokeShape="RoundRectangle 10" StrokeThickness="0">
+                            <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                                <VerticalStackLayout HorizontalOptions="Center">
+                                    <Label Text="🌡️" HorizontalOptions="Center" />
+                                    <Label Text="{Binding Recommendation.Context.Temperature, StringFormat='{0}°C'}" TextColor="White" FontAttributes="Bold" />
+                                </VerticalStackLayout>
+                                <VerticalStackLayout HorizontalOptions="Center">
+                                    <Label Text="🌊" HorizontalOptions="Center" />
+                                    <Label Text="{Binding Recommendation.Context.Tide_Condition}" TextColor="White" FontAttributes="Bold" />
+                                </VerticalStackLayout>
+                                <VerticalStackLayout HorizontalOptions="Center">
+                                    <Label Text="☁️" HorizontalOptions="Center" />
+                                    <Label Text="{Binding Recommendation.Context.Weather_Condition}" TextColor="White" FontAttributes="Bold" />
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                        </Border>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Action Button -->
+                <Button Text="CẬP NHẬT GỢI Ý MỚI" 
+                        BackgroundColor="#FFD700" 
+                        TextColor="#0B132B"
+                        FontAttributes="Bold"
+                        CornerRadius="25"
+                        HeightRequest="55"
+                        Command="{Binding LoadRecommendationCommand}"
+                        IsEnabled="{Binding IsLoading, Converter={x:StaticResource InvertedBoolConverter}}" />
+
+                        <Label Text="* Dữ liệu được cập nhật dựa trên tọa độ GPS và trạm khí tượng gần nhất." 
+                               TextColor="#3A506B" 
+                               FontSize="10" 
+                               HorizontalOptions="Center" />
+
+                        <!-- Biorhythm Card -->
+                        <Border StrokeShape="RoundRectangle 20" 
+                                StrokeThickness="0" 
+                                IsVisible="{Binding HasData}"
+                                BackgroundColor="#1C2541"
+                                Padding="25">
+                            <VerticalStackLayout Spacing="15">
+                                <Label Text="🔴 ĐỒNG HỒ SINH HỌC (BIỂU ĐỒ CẮN CÂU)" 
+                                       TextColor="#FFD700" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold" />
+                                
+                                <Label Text="{Binding Biorhythm.Advice}" 
+                                       TextColor="#6FFFE9" 
+                                       FontSize="13" 
+                                       Italic="True" />
+
+                                <HorizontalStackLayout Spacing="2" HeightRequest="100" VerticalOptions="End">
+                                    <BoxView WidthRequest="8" HeightRequest="40" Color="#5BC0BE" VerticalOptions="End" CornerRadius="4" />
+                                    <BoxView WidthRequest="8" HeightRequest="60" Color="#5BC0BE" VerticalOptions="End" CornerRadius="4" />
+                                    <BoxView WidthRequest="8" HeightRequest="80" Color="#FFD700" VerticalOptions="End" CornerRadius="4" />
+                                    <BoxView WidthRequest="8" HeightRequest="90" Color="#FFD700" VerticalOptions="End" CornerRadius="4" />
+                                    <BoxView WidthRequest="8" HeightRequest="70" Color="#5BC0BE" VerticalOptions="End" CornerRadius="4" />
+                                    <BoxView WidthRequest="8" HeightRequest="40" Color="#5BC0BE" VerticalOptions="End" CornerRadius="4" />
+                                    <BoxView WidthRequest="8" HeightRequest="20" Color="#3A506B" VerticalOptions="End" CornerRadius="4" />
+                                    <BoxView WidthRequest="8" HeightRequest="30" Color="#3A506B" VerticalOptions="End" CornerRadius="4" />
+                                    <BoxView WidthRequest="8" HeightRequest="50" Color="#5BC0BE" VerticalOptions="End" CornerRadius="4" />
+                                    <BoxView WidthRequest="8" HeightRequest="80" Color="#FFD700" VerticalOptions="End" CornerRadius="4" />
+                                </HorizontalStackLayout>
+                                <Label Text="Giai đoạn Cá cắn mạnh nhất: 06:00 - 09:00" 
+                                       TextColor="#5BC0BE" 
+                                       FontSize="11" 
+                                       HorizontalOptions="Center" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </VerticalStackLayout>
+                </ScrollView>
+            </Grid>
+        </ContentPage>
