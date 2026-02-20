@@ -1,3 +1,6 @@
+using System.Net.Http.Json;
+using SatNguApp.Mobile.Models;
+
 namespace SatNguApp.Mobile.Services
 {
     public class BackendService
