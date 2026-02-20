@@ -1,0 +1,35 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup .NET 10
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '10.0.x'
+
+    - name: Install MAUI Workload
+      run: dotnet workload install maui
+
+    - name: Restore dependencies
+      run: dotnet restore mobile/SatNguApp.Mobile.csproj
+
+    - name: Build Android APK
+      run: dotnet publish mobile/SatNguApp.Mobile.csproj -f net10.0-android -c Release -p:AndroidPackageFormat=apk
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: SatNguApp-APK
+        path: mobile/bin/Release/net10.0-android/**/*-Signed.apk

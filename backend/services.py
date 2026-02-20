@@ -1,0 +1,65 @@
+import random
+from typing import Dict
+
+class WeatherService:
+    @staticmethod
+    def get_weather_and_tide(lat: float, lon: float) -> Dict:
+        # Giả lập gọi API OpenWeatherMap và Tide API
+        # Trong thực tế, sẽ dùng thư viện requests với API Key
+        
+        # Mô phỏng dữ liệu thời tiết
+        is_hot = random.choice([True, False])
+        temperature = random.randint(30, 36) if is_hot else random.randint(15, 25)
+        weather_condition = "nóng" if temperature >= 30 else "lạnh"
+        
+        # Mô phỏng dữ liệu thủy triều
+        tide_condition = random.choice(["nước lớn", "nước ròng"])
+        
+        return {
+            "temperature": temperature,
+            "weather_condition": weather_condition,
+            "tide_condition": tide_condition
+        }
+
+class RecommendationService:
+    @staticmethod
+    def get_combo_recommendation(db_session, lat: float, lon: float):
+        # 1. Lấy thông tin thời tiết & con nước
+        context = WeatherService.get_weather_and_tide(lat, lon)
+        
+        # 2. Query Rules Engine dựa trên context
+        # (Ở mức prototype, ta lấy tất cả rule và lọc, hoặc query trực tiếp)
+        # Vì db có thể chưa có data mock sẵn, ta sẽ trả ra mock data nếu query không thấy.
+        from models import Rule, Fish, Gear, Bait
+        
+        rules = db_session.query(Rule).filter(
+            (Rule.weather_condition == context["weather_condition"]) | (Rule.weather_condition == None),
+            (Rule.tide_condition == context["tide_condition"]) | (Rule.tide_condition == None)
+        ).all()
+        
+        if not rules:
+            # Fallback mock data nếu DB trống
+            return {
+                "context": context,
+                "recommendation": {
+                    "fish_target": "Cá Tra sông (Mock)",
+                    "gear": "Cần bạo lực dộ cứng MH, Máy size 4000-6000, Trục 5.0, Thẻo dù",
+                    "bait": "Cám tanh trộn gan xay"
+                },
+                "message": "Fallback to mock data due to empty Rules DB"
+            }
+            
+        # Nếu có rule trong DB, lấy ngẫu nhiên 1 rule hợp lệ
+        selected_rule = random.choice(rules)
+        fish = db_session.query(Fish).filter(Fish.id == selected_rule.fish_id).first()
+        gear = db_session.query(Gear).filter(Gear.id == selected_rule.gear_id).first()
+        bait = db_session.query(Bait).filter(Bait.id == selected_rule.bait_id).first()
+        
+        return {
+            "context": context,
+            "recommendation": {
+                "fish_target": fish.name if fish else "Unknown",
+                "gear": f"{gear.name} ({gear.specifications})" if gear else "Unknown",
+                "bait": f"{bait.name} ({bait.recipe})" if bait else "Unknown"
+            }
+        }
