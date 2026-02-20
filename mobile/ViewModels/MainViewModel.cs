@@ -12,8 +12,8 @@ namespace SatNguApp.Mobile.ViewModels
     public class MainViewModel : INotifyPropertyChanged
     {
         private readonly BackendService _backendService;
-        private ComboRecommendationResponse _recommendation;
-        private BiorhythmResponse _biorhythm;
+        private ComboRecommendationResponse _recommendation = new();
+        private BiorhythmResponse _biorhythm = new();
         private bool _isLoading;
         private string _locationText = "Đang tìm vị trí...";
 
@@ -104,7 +104,7 @@ namespace SatNguApp.Mobile.ViewModels
                     // 2. Fetch Recommendation
                     Recommendation = await _backendService.GetRecommendationAsync(location.Latitude, location.Longitude);
 
-                    if (Recommendation != null && Recommendation.Recommendation != null)
+                    if (Recommendation != null && Recommendation.Recommendation != null && !string.IsNullOrEmpty(Recommendation.Recommendation.Fish_Target))
                     {
                         ScheduleDailyNotification(Recommendation.Recommendation);
                         

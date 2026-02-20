@@ -25,7 +25,7 @@ namespace SatNguApp.Mobile.Services
             catch (Exception ex)
             {
                 Console.WriteLine($"Error fetching recommendation: {ex.Message}");
-                return null;
+                return new();
             }
         }
         
@@ -39,7 +39,7 @@ namespace SatNguApp.Mobile.Services
             catch (Exception ex)
             {
                 Console.WriteLine($"Error fetching biorhythm: {ex.Message}");
-                return null;
+                return new();
             }
         }
     }
