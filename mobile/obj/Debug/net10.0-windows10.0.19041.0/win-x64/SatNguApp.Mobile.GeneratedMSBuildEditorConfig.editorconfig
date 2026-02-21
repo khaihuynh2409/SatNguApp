@@ -48,6 +48,16 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
+[C:/Users/QUOC KHAI/.gemini/antigravity/scratch/SatNguApp/mobile/AssistantPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SatNguApp.Mobile.AssistantPage.xaml
+build_metadata.AdditionalFiles.TargetPath = AssistantPage.xaml
+build_metadata.AdditionalFiles.RelativePath = AssistantPage.xaml
+build_metadata.AdditionalFiles.Inflator = Runtime
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
 [C:/Users/QUOC KHAI/.gemini/antigravity/scratch/SatNguApp/mobile/CatalogPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SatNguApp.Mobile.CatalogPage.xaml

@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="456" height="456" viewBox="0 0 456 456" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <rect x="0" y="0" width="456" height="456" fill="#512BD4" />
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="#0B132B"/>
+  
+  <!-- Outer Ring (Gold) -->
+  <circle cx="512" cy="512" r="400" stroke="#FFD700" stroke-width="24" fill="none" />
+  
+  <!-- Water Waves (Turquoise) -->
+  <path d="M 152 712 Q 332 612 512 712 T 872 712 L 872 912 L 152 912 Z" fill="#5BC0BE" opacity="0.8"/>
+  <path d="M 112 652 Q 292 752 512 652 T 912 652 L 912 852 L 112 852 Z" fill="#3A506B" opacity="0.6"/>
+
+  <!-- Stylized Fish Silhouette & Hook (Gold and Turqoise accents) -->
+  <path d="M 412 812 C 212 612 112 312 312 112 C 462 262 512 412 612 612 C 712 512 812 412 912 212 C 812 512 612 812 412 812 Z" fill="#FFD700"/>
+  
+  <!-- Hook embedded -->
+  <path d="M 512 212 L 512 612 A 100 100 0 0 0 712 612 L 712 512 L 672 562" stroke="#FFFFFF" stroke-width="40" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <circle cx="512" cy="180" r="32" stroke="#FFFFFF" stroke-width="24" fill="none" />
+  
+  <!-- Eye -->
+  <circle cx="380" cy="300" r="24" fill="#0B132B"/>
 </svg>
