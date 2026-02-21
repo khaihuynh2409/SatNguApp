@@ -29,5 +29,7 @@
   </Applications>
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />
+    <uap:Capability Name="internetClient" />
+    <DeviceCapability Name="location" />
   </Capabilities>
 </Package>

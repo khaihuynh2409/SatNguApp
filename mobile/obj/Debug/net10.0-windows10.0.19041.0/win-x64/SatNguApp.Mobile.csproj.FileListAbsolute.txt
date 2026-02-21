@@ -516,3 +516,5 @@ C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Debug\net10.
 C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Debug\net10.0-windows10.0.19041.0\win-x64\qualifiers.txt
 C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Debug\net10.0-windows10.0.19041.0\win-x64\qualifiers.txt.intermediate
 C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Debug\net10.0-windows10.0.19041.0\win-x64\MultipleQualifiersPerDimensionFound.txt
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Plugin.LocalNotification.dll
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Debug\net10.0-windows10.0.19041.0\win-x64\SatNguApp.Mobile.sourcelink.json

@@ -86,16 +86,24 @@ namespace SatNguApp.Mobile.ViewModels
 
             try
             {
+#if WINDOWS
+                // Windows Demo Mode: Bypass permission and use mock GPS
+                Location location = new Location(10.25, 106.3); // Sông Tiền area
+                bool isGranted = true;
+#else
                 // Request notification permission
                 var isGranted = await LocalNotificationCenter.Current.AreNotificationsEnabled();
                 if (!isGranted)
                 {
                     await LocalNotificationCenter.Current.RequestNotificationPermission();
                 }
+#endif
 
+#if !WINDOWS
                 // 1. Get Location
                 var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10));
                 var location = await Geolocation.Default.GetLocationAsync(request);
+#endif
 
                 if (location != null)
                 {
@@ -155,7 +163,9 @@ namespace SatNguApp.Mobile.ViewModels
                 }
             };
 
+#if !WINDOWS
             LocalNotificationCenter.Current.Show(notification);
+#endif
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

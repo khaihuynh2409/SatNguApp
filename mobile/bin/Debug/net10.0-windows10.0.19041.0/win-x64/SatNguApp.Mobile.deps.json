@@ -11,6 +11,7 @@
         "dependencies": {
           "Microsoft.Extensions.Logging.Debug": "10.0.0",
           "Microsoft.Maui.Controls": "10.0.1",
+          "Plugin.LocalNotification": "13.0.0",
           "Microsoft.Web.WebView2.Core.Projection": "1.0.3179.45",
           "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.19041.57"
         },
@@ -509,6 +510,14 @@
           }
         }
       },
+      "Plugin.LocalNotification/13.0.0": {
+        "runtime": {
+          "lib/net10.0/Plugin.LocalNotification.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.0.0"
+          }
+        }
+      },
       "Microsoft.Web.WebView2.Core.Projection/1.0.3179.45": {
         "runtime": {
           "Microsoft.Web.WebView2.Core.Projection.dll": {
@@ -690,6 +699,13 @@
       "sha512": "sha512-zeVFVrkFYPkAL1cmXo62D1LVC66VqBiMx+WfZ3aDUmizNECCJewMTk0JwjlgYQcIqxqsK1SjF1CeG74TsokWpQ==",
       "path": "microsoft.windowsappsdk/1.7.250909003",
       "hashPath": "microsoft.windowsappsdk.1.7.250909003.nupkg.sha512"
+    },
+    "Plugin.LocalNotification/13.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0SZgdi9su4a4p54nBrSswPwgUX65L646feQYNX0vdB8/ZxIwNqJsz0oMHxvlAv5OftESQvE6hz8628mnftjUtg==",
+      "path": "plugin.localnotification/13.0.0",
+      "hashPath": "plugin.localnotification.13.0.0.nupkg.sha512"
     },
     "Microsoft.Web.WebView2.Core.Projection/1.0.3179.45": {
       "type": "reference",

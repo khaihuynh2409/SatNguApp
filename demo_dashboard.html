@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SÁT NGƯ - TRỢ LÝ CẦN THỦ (DEMO)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0B132B;
+            --card-bg: #1C2541;
+            --accent: #FFD700;
+            --text-secondary: #5BC0BE;
+            --text-accent: #6FFFE9;
+            --border: #3A506B;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: white;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        header h1 {
+            color: var(--accent);
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            margin: 5px 0 0;
+            font-size: 12px;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .icon-circle {
+            font-size: 24px;
+        }
+
+        .card-title-group h2 {
+            margin: 0;
+            font-size: 12px;
+            color: var(--text-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-title-group p {
+            margin: 5px 0 0;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: var(--border);
+        }
+
+        .detail-row {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .detail-label {
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .detail-value {
+            font-size: 15px;
+        }
+
+        .context-box {
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .context-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .context-icon { font-size: 18px; }
+        .context-val { font-weight: 700; font-size: 14px; }
+
+        .biorhythm-card h3 {
+            color: var(--accent);
+            font-size: 14px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .advice {
+            color: var(--text-accent);
+            font-size: 13px;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            height: 100px;
+            margin: 20px 0;
+            padding-bottom: 5px;
+        }
+
+        .bar {
+            flex: 1;
+            background-color: var(--text-secondary);
+            border-radius: 4px 4px 0 0;
+        }
+
+        .bar.high {
+            background-color: var(--accent);
+        }
+
+        .btn {
+            background-color: var(--accent);
+            color: var(--bg-color);
+            border: none;
+            padding: 15px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.02);
+        }
+
+        .footer-note {
+            color: var(--border);
+            font-size: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SÁT NGƯ APP</h1>
+            <p>Vị trí: 10.2500, 106.3000 (Sông Tiền)</p>
+        </header>
+
+        <main>
+            <!-- Recommendation -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon-circle">🎯</div>
+                    <div class="card-title-group">
+                        <h2>Mục tiêu hôm nay</h2>
+                        <p>Cá Tra / Cá Lăng</p>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="detail-row">
+                    <div class="detail-label">🎣 BỘ ĐỒ CÂU TỐI ƯU</div>
+                    <div class="detail-value">Cần Echo bạo lực, Thẻo dù 0.4</div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-label">🪱 BÍ QUYẾT MỒI CÂU</div>
+                    <div class="detail-value">Cám cá tanh + Cốt dừa</div>
+                </div>
+
+                <div class="context-box">
+                    <div class="context-item">
+                        <span class="context-icon">🌡️</span>
+                        <span class="context-val">30°C</span>
+                    </div>
+                    <div class="context-item">
+                        <span class="context-icon">🌊</span>
+                        <span class="context-val">Nước đang lớn</span>
+                    </div>
+                    <div class="context-item">
+                        <span class="context-icon">☁️</span>
+                        <span class="context-val">Nắng nhẹ</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Biorhythm -->
+            <div class="card biorhythm-card">
+                <h3>🔴 ĐỒNG HỒ SINH HỌC (BIỂU ĐỒ CẮN CÂU)</h3>
+                <p class="advice">Khung giờ vàng: Cá cắn mạnh nhất từ 07:00 - 09:00 sáng. Nên đánh tầng đáy.</p>
+                
+                <div class="chart">
+                    <div class="bar" style="height: 40%;"></div>
+                    <div class="bar" style="height: 60%;"></div>
+                    <div class="bar high" style="height: 80%;"></div>
+                    <div class="bar high" style="height: 95%;"></div>
+                    <div class="bar" style="height: 70%;"></div>
+                    <div class="bar" style="height: 45%;"></div>
+                    <div class="bar" style="height: 25%;"></div>
+                    <div class="bar" style="height: 35%;"></div>
+                    <div class="bar" style="height: 55%;"></div>
+                    <div class="bar high" style="height: 85%;"></div>
+                </div>
+
+                <p style="text-align: center; font-size: 11px; color: var(--text-secondary); margin: 0;">
+                    Giai đoạn Cá cắn mạnh nhất: 06:00 - 09:00
+                </p>
+            </div>
+
+            <button class="btn">CẬP NHẬT GỢI Ý MỚI</button>
+
+            <p class="footer-note">* Dữ liệu DEMO được mô phỏng cho phiên bản chạy trên máy tính.</p>
+        </main>
+    </div>
+</body>
+</html>

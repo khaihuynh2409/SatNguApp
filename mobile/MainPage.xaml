@@ -6,9 +6,7 @@
              BackgroundColor="#0B132B"
              Title="SÁT NGƯ - TRỢ LÝ CẦN THỦ">
 
-    <ContentPage.BindingContext>
-        <viewmodels:MainViewModel />
-    </ContentPage.BindingContext>
+
 
     <Grid RowDefinitions="Auto, *">
         <!-- Header -->
