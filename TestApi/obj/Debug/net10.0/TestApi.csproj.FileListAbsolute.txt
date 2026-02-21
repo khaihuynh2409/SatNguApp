@@ -1,0 +1,15 @@
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\TestApi\bin\Debug\net10.0\TestApi.exe
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\TestApi\bin\Debug\net10.0\TestApi.deps.json
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\TestApi\bin\Debug\net10.0\TestApi.runtimeconfig.json
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\TestApi\bin\Debug\net10.0\TestApi.dll
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\TestApi\bin\Debug\net10.0\TestApi.pdb
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\TestApi\obj\Debug\net10.0\TestApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\TestApi\obj\Debug\net10.0\TestApi.AssemblyInfoInputs.cache
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\TestApi\obj\Debug\net10.0\TestApi.AssemblyInfo.cs
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\TestApi\obj\Debug\net10.0\TestApi.csproj.CoreCompileInputs.cache
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\TestApi\obj\Debug\net10.0\TestApi.sourcelink.json
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\TestApi\obj\Debug\net10.0\TestApi.dll
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\TestApi\obj\Debug\net10.0\refint\TestApi.dll
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\TestApi\obj\Debug\net10.0\TestApi.pdb
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\TestApi\obj\Debug\net10.0\TestApi.genruntimeconfig.cache
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\TestApi\obj\Debug\net10.0\ref\TestApi.dll

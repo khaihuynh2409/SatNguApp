@@ -1,0 +1,11 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\36.1.2\tools\Xamarin.Android.Common.targets(549,3): error XA1030: The 'RunAOTCompilation' MSBuild property is only supported when trimming is enabled. Edit the project file in a text editor to set 'PublishTrimmed' to 'true' for this build configuration. [C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\SatNguApp.Mobile.csproj::TargetFramework=net10.0-android]
+
+Build FAILED.
+
+C:\Program Files\dotnet\packs\Microsoft.Android.Sdk.Windows\36.1.2\tools\Xamarin.Android.Common.targets(549,3): error XA1030: The 'RunAOTCompilation' MSBuild property is only supported when trimming is enabled. Edit the project file in a text editor to set 'PublishTrimmed' to 'true' for this build configuration. [C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\SatNguApp.Mobile.csproj::TargetFramework=net10.0-android]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.24

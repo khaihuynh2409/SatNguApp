@@ -1,0 +1,4 @@
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\bin\Release\net10.0-android\publish\com.companyname.satnguapp.mobile-Signed.aab
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\bin\Release\net10.0-android\publish\com.companyname.satnguapp.mobile.aab
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\bin\Release\net10.0-android\publish\com.companyname.satnguapp.mobile-Signed.apk
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\bin\Release\net10.0-android\publish\_Microsoft.Android.Resource.Designer.dll

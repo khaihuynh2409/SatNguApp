@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace SatNguApp.Mobile.Models
 {
@@ -43,5 +44,17 @@ namespace SatNguApp.Mobile.Models
     public class ChatResponse
     {
         public string Reply { get; set; } = string.Empty;
+    }
+
+    [JsonSerializable(typeof(ComboRecommendationResponse))]
+    [JsonSerializable(typeof(WeatherContext))]
+    [JsonSerializable(typeof(Recommendation))]
+    [JsonSerializable(typeof(BiorhythmResponse))]
+    [JsonSerializable(typeof(ChatRequest))]
+    [JsonSerializable(typeof(ChatResponse))]
+    [JsonSerializable(typeof(Dictionary<string, double>))]
+    [JsonSourceGenerationOptions(PropertyNameCaseInsensitive = true)]
+    public partial class ApiJsonContext : JsonSerializerContext
+    {
     }
 }

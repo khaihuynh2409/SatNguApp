@@ -1,0 +1,5 @@
+<api>
+  <acw-types partial-assembly-name="Xamarin.GooglePlayServices.Basement" module-name="Xamarin.GooglePlayServices.Basement.dll">
+    <type assembly-qualified-name="Android.Gms.Common.Apis.IResultCallback, Xamarin.GooglePlayServices.Basement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="com.google.android.gms.common.api.ResultCallback" java-key="com.google.android.gms.common.api.ResultCallback" managed-key="Android.Gms.Common.Apis.IResultCallback" partial-assembly-qualified-name="Android.Gms.Common.Apis.IResultCallback, Xamarin.GooglePlayServices.Basement" />
+  </acw-types>
+</api>
