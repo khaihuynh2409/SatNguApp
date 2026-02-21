@@ -12,7 +12,14 @@ namespace SatNguApp.Mobile.Services
 
         public BackendService()
         {
+#if ANDROID
+            var handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true;
+            _httpClient = new HttpClient(handler);
+#else
             _httpClient = new HttpClient();
+#endif
+            _httpClient.Timeout = TimeSpan.FromSeconds(30);
         }
 
         public async Task<ComboRecommendationResponse> GetRecommendationAsync(double lat, double lon)

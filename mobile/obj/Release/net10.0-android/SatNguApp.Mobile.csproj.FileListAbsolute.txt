@@ -502,3 +502,7 @@ C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Release\net1
 C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Release\net10.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Release\net10.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Release\net10.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Release\net10.0-android\res\xml\network_security_config.xml
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Release\net10.0-android\android\src\xamarin\android\net\ServerCertificateCustomValidator_AlwaysAcceptingHostnameVerifier.java
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Release\net10.0-android\android\src\xamarin\android\net\ServerCertificateCustomValidator_TrustManager.java
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Release\net10.0-android\android\src\xamarin\android\net\ServerCertificateCustomValidator_TrustManager_FakeSSLSession.java

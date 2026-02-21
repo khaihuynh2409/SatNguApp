@@ -919,6 +919,9 @@ javax.net.ssl.SSLSessionContext;javax.net.ssl.SSLSessionContext
 Javax.Net.Ssl.ITrustManager, Mono.Android;javax.net.ssl.TrustManager
 Javax.Net.Ssl.ITrustManager;javax.net.ssl.TrustManager
 javax.net.ssl.TrustManager;javax.net.ssl.TrustManager
+Javax.Net.Ssl.IX509TrustManager, Mono.Android;javax.net.ssl.X509TrustManager
+Javax.Net.Ssl.IX509TrustManager;javax.net.ssl.X509TrustManager
+javax.net.ssl.X509TrustManager;javax.net.ssl.X509TrustManager
 Kotlin.Coroutines.IContinuation, Xamarin.Kotlin.StdLib;kotlin.coroutines.Continuation
 Kotlin.Coroutines.IContinuation;kotlin.coroutines.Continuation
 kotlin.coroutines.Continuation;kotlin.coroutines.Continuation
@@ -1570,6 +1573,15 @@ satnguapp.mobile.MainActivity;crc64cbf3a61fe19a0178.MainActivity
 SatNguApp.Mobile.MainApplication, SatNguApp.Mobile;crc64cbf3a61fe19a0178.MainApplication
 SatNguApp.Mobile.MainApplication;crc64cbf3a61fe19a0178.MainApplication
 satnguapp.mobile.MainApplication;crc64cbf3a61fe19a0178.MainApplication
+Xamarin.Android.Net.ServerCertificateCustomValidator+AlwaysAcceptingHostnameVerifier, Mono.Android;xamarin.android.net.ServerCertificateCustomValidator_AlwaysAcceptingHostnameVerifier
+Xamarin.Android.Net.ServerCertificateCustomValidator.AlwaysAcceptingHostnameVerifier;xamarin.android.net.ServerCertificateCustomValidator_AlwaysAcceptingHostnameVerifier
+xamarin.android.net.ServerCertificateCustomValidator_AlwaysAcceptingHostnameVerifier;xamarin.android.net.ServerCertificateCustomValidator_AlwaysAcceptingHostnameVerifier
+Xamarin.Android.Net.ServerCertificateCustomValidator+TrustManager, Mono.Android;xamarin.android.net.ServerCertificateCustomValidator_TrustManager
+Xamarin.Android.Net.ServerCertificateCustomValidator.TrustManager;xamarin.android.net.ServerCertificateCustomValidator_TrustManager
+xamarin.android.net.ServerCertificateCustomValidator_TrustManager;xamarin.android.net.ServerCertificateCustomValidator_TrustManager
+Xamarin.Android.Net.ServerCertificateCustomValidator+TrustManager+FakeSSLSession, Mono.Android;xamarin.android.net.ServerCertificateCustomValidator_TrustManager_FakeSSLSession
+Xamarin.Android.Net.ServerCertificateCustomValidator.TrustManager.FakeSSLSession;xamarin.android.net.ServerCertificateCustomValidator_TrustManager_FakeSSLSession
+xamarin.android.net.ServerCertificateCustomValidator_TrustManager_FakeSSLSession;xamarin.android.net.ServerCertificateCustomValidator_TrustManager_FakeSSLSession
 Xamarin.KotlinX.Coroutines.Flow.IFlow, Xamarin.KotlinX.Coroutines.Core.Jvm;kotlinx.coroutines.flow.Flow
 Xamarin.KotlinX.Coroutines.Flow.IFlow;kotlinx.coroutines.flow.Flow
 kotlinx.coroutines.flow.Flow;kotlinx.coroutines.flow.Flow
