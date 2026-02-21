@@ -10,13 +10,22 @@
         <!-- Filter Header -->
         <Border Grid.Row="0" BackgroundColor="#1C2541" Padding="15" StrokeThickness="0">
             <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                <Picker x:Name="FishPicker" Title="Chọn loài cá" TitleColor="#5BC0BE" TextColor="White" WidthRequest="150">
-                    <Picker.Items>
-                        <x:String>Cá Tra</x:String>
-                        <x:String>Cá Chép</x:String>
-                        <x:String>Cá Rô Phi</x:String>
-                        <x:String>Cá Lóc</x:String>
-                    </Picker.Items>
+                <Picker x:Name="FishPicker" Title="Chọn loài cá" TitleColor="#5BC0BE" TextColor="White" WidthRequest="150" ItemDisplayBinding="{Binding .}">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Cá chép</x:String><x:String>Cá trắm đen</x:String><x:String>Cá trắm cỏ</x:String><x:String>Cá trôi</x:String>
+                            <x:String>Cá mè trắng</x:String><x:String>Cá mè hoa</x:String><x:String>Cá mè vinh</x:String><x:String>Cá rô phi</x:String>
+                            <x:String>Cá rô đồng</x:String><x:String>Cá diếc</x:String><x:String>Cá dãnh</x:String><x:String>Cá he</x:String>
+                            <x:String>Cá ngựa</x:String><x:String>Cá chày</x:String><x:String>Cá đong đong</x:String><x:String>Cá mại</x:String>
+                            <x:String>Cá tra</x:String><x:String>Cá basa</x:String><x:String>Cá vồ đém</x:String><x:String>Cá bông lau</x:String>
+                            <x:String>Cá lăng</x:String><x:String>Cá trê</x:String><x:String>Cá ngạnh</x:String><x:String>Cá nheo</x:String>
+                            <x:String>Cá bò</x:String><x:String>Cá chiên</x:String><x:String>Cá lóc</x:String><x:String>Cá chẽm</x:String>
+                            <x:String>Cá măng</x:String><x:String>Cá ngão</x:String><x:String>Cá thiểu</x:String><x:String>Cá chạch</x:String>
+                            <x:String>Cá lòng tong</x:String><x:String>Cá mương</x:String><x:String>Cá sặt</x:String><x:String>Cá sặt rằn</x:String>
+                            <x:String>Cá lia thia</x:String><x:String>Cá thác lác</x:String><x:String>Cá cườm</x:String><x:String>Cá linh</x:String>
+                            <x:String>Cá trèn</x:String><x:String>Cá rầm</x:String><x:String>Cá bống</x:String><x:String>Cá mú nước ngọt</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
                 </Picker>
                 <Picker x:Name="SeasonPicker" Title="Mùa" TitleColor="#5BC0BE" TextColor="White" WidthRequest="120">
                     <Picker.Items>

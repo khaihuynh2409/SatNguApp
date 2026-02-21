@@ -53,30 +53,30 @@
                             <Label Text="🎣 BỘ ĐỒ CÂU TỐI ƯU" TextColor="#FFD700" FontSize="14" FontAttributes="Bold" />
                             
                             <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto, Auto, Auto" ColumnSpacing="15" RowSpacing="10">
-                                <!-- Cần & Máy -->
-                                <Label Grid.Row="0" Grid.Column="0" Text="Cần &amp; Máy:" TextColor="#5BC0BE" FontSize="13" VerticalOptions="Center" />
+                                <!-- Cần & Phao -->
+                                <Label Grid.Row="0" Grid.Column="0" Text="Cần &amp; Phao:" TextColor="#5BC0BE" FontSize="13" VerticalOptions="Center" />
                                 <Label Grid.Row="0" Grid.Column="1" Text="{Binding Recommendation.Recommendation.Gear}" TextColor="White" FontSize="14" />
                                 
-                                <!-- Dây Trục -->
-                                <Label Grid.Row="1" Grid.Column="0" Text="Dây Trục:" TextColor="#5BC0BE" FontSize="13" VerticalOptions="Center" />
-                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Recommendation.Recommendation.Axis_Line}" TextColor="White" FontSize="14" />
-                                
-                                <!-- Thẻo & Lưỡi -->
-                                <Label Grid.Row="2" Grid.Column="0" Text="Thẻo &amp; Lưỡi:" TextColor="#5BC0BE" FontSize="13" VerticalOptions="Center" />
-                                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Recommendation.Recommendation.Leader, StringFormat='{0} - '}" TextColor="White" FontSize="14">
+                                <!-- Dây Trục & Thẻo -->
+                                <Label Grid.Row="1" Grid.Column="0" Text="Trục &amp; Thẻo:" TextColor="#5BC0BE" FontSize="13" VerticalOptions="Center" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Recommendation.Recommendation.Axis_Line}" TextColor="White" FontSize="14">
                                     <Label.FormattedText>
                                         <FormattedString>
+                                            <Span Text="{Binding Recommendation.Recommendation.Axis_Line}" />
+                                            <Span Text=" | " TextColor="#5BC0BE" />
                                             <Span Text="{Binding Recommendation.Recommendation.Leader}" />
-                                            <Span Text=" | Lưỡi: " TextColor="#5BC0BE" />
-                                            <Span Text="{Binding Recommendation.Recommendation.Hook}" FontAttributes="Bold" />
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
+                                
+                                <!-- Lưỡi Câu -->
+                                <Label Grid.Row="2" Grid.Column="0" Text="Lưỡi Câu:" TextColor="#5BC0BE" FontSize="13" VerticalOptions="Center" />
+                                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Recommendation.Recommendation.Hook}" TextColor="White" FontSize="14" FontAttributes="Bold" />
                             </Grid>
                         </VerticalStackLayout>
 
                         <VerticalStackLayout Spacing="8">
-                            <Label Text="🪱 BÍ QUYẾT MỒI CÂU" TextColor="#FFD700" FontSize="14" FontAttributes="Bold" />
+                            <Label Text="🪱 BÍ QUYẾT MỒI CÂU ĐÀI" TextColor="#FFD700" FontSize="14" FontAttributes="Bold" />
                             <Label Text="{Binding Recommendation.Recommendation.Bait}" TextColor="White" FontSize="15" />
                         </VerticalStackLayout>
 

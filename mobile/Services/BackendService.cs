@@ -24,12 +24,12 @@ namespace SatNguApp.Mobile.Services
                 {
                     Recommendation = new Recommendation 
                     { 
-                        Fish_Target = "Cá Tra / Cá Lăng (Sông Tiền)", 
-                        Gear = "Cần Echo bạo lực, Máy size 5000",
-                        Axis_Line = "Trục dù Pe 4.0",
-                        Leader = "Thẻo dù 0.4 hoặc Fluoro 0.5",
-                        Hook = "Lưỡi săn hàng size 10, có ngạnh",
-                        Bait = "Cám cá tanh + Cốt dừa" 
+                        Fish_Target = "Cá chép / Cá trắm (Hồ tự nhiên)", 
+                        Gear = "Cần tay 5H - 5m4, Phao cỏ ngọn nhỏ",
+                        Axis_Line = "Trục nylon 2.0",
+                        Leader = "Thẻo Fluoro 1.2",
+                        Hook = "Isego size 6, không ngạnh",
+                        Bait = "Mồi xả tơi + Mồi vuốt (vị tanh dâu)" 
                     },
                     Context = new WeatherContext { Temperature = 30, Weather_Condition = "Nắng nhẹ", Tide_Condition = "Nước đang lớn" },
                     Message = "DỮ LIỆU DEMO NÂNG CẤP (WINDOWS)"

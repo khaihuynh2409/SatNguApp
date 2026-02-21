@@ -518,3 +518,13 @@ C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Debug\net10.
 C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Debug\net10.0-windows10.0.19041.0\win-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Plugin.LocalNotification.dll
 C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Debug\net10.0-windows10.0.19041.0\win-x64\SatNguApp.Mobile.sourcelink.json
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\bin\Debug\net10.0-windows10.0.19041.0\win-x64\appiconSplashScreen.scale-100.png
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\bin\Debug\net10.0-windows10.0.19041.0\win-x64\appiconSplashScreen.scale-125.png
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\bin\Debug\net10.0-windows10.0.19041.0\win-x64\appiconSplashScreen.scale-150.png
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\bin\Debug\net10.0-windows10.0.19041.0\win-x64\appiconSplashScreen.scale-200.png
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\bin\Debug\net10.0-windows10.0.19041.0\win-x64\appiconSplashScreen.scale-400.png
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Debug\net10.0-windows10.0.19041.0\win-x64\resizetizer\sp\appiconSplashScreen.scale-100.png
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Debug\net10.0-windows10.0.19041.0\win-x64\resizetizer\sp\appiconSplashScreen.scale-125.png
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Debug\net10.0-windows10.0.19041.0\win-x64\resizetizer\sp\appiconSplashScreen.scale-150.png
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Debug\net10.0-windows10.0.19041.0\win-x64\resizetizer\sp\appiconSplashScreen.scale-200.png
+C:\Users\QUOC KHAI\.gemini\antigravity\scratch\SatNguApp\mobile\obj\Debug\net10.0-windows10.0.19041.0\win-x64\resizetizer\sp\appiconSplashScreen.scale-400.png
