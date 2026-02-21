@@ -100,3 +100,23 @@ class RecommendationService:
                 }
             })
         return results
+
+class ChatService:
+    @staticmethod
+    def get_ai_response(message: str, has_image: bool) -> str:
+        # Giả lập phản hồi từ LLM (Ví dụ GPT-4 Vision / Gemini)
+        message_lower = message.lower()
+        
+        if has_image:
+            return "📸 Tôi đã nhận được ảnh của bác. Nhìn qua thì loại mồi bám móc rất tốt, trạng thái mồi tơi xốp, rất phù hợp để đánh đáy cho cá Chép và Trắm. Tuy nhiên, nếu nước tĩnh bác nên thêm chút hương liệu tanh thơm (ví dụ: tinh mùi dâu hoặc trùn chỉ) để kích thích cá tợp mài nhanh hơn nhé!"
+            
+        if "mồi" in message_lower or "cám" in message_lower:
+            return "🎣 Về mồi câu đài, bác cứ nhớ nguyên tắc: 'Mùa lạnh đánh tanh, mùa nóng đánh thơm/chua'. Hiện tại đang mùa Nóng, bác nên ưu tiên các loại mồi có vị ngũ cốc lên men, vị trái cây (ổi, dâu) hoặc mồi bắp ủ chua nhé."
+            
+        if "thẻo" in message_lower or "trục" in message_lower or "phao" in message_lower:
+            return "📏 Với hệ Câu Đài, trục và thẻo rất quan trọng. Trục nylon 2.0 và thẻo 1.2 là thông số tiêu chuẩn cho cá từ 2-5kg. Khi cân phao, bác cứ cân 5 câu 3 (hoặc 7 câu 3) để tín hiệu báo sập phao chuẩn nhất nhé."
+            
+        if "cá chép" in message_lower:
+            return "🐟 Cá Chép rất khôn và ăn nhát. Bác nên xả ổ thật êm, mồi vê tròn mềm để cá hút dễ dàng. Tránh tiếng động mạnh và dùng phao ngọn nhỏ, ăn chì ít (tầm 1.5 - 2.5g) để thấy rõ nhịp tăm lên."
+            
+        return "🤖 Chào bác! Em là Trợ Lý AI chuyên Câu Đài của Sát Ngư. Bác cần tư vấn về mồi, trục thẻo, hay muốn em đánh giá địa hình/mồi qua ảnh chụp thì cứ nhắn em nhé!"

@@ -17,6 +17,11 @@
                 ContentTemplate="{DataTemplate local:CatalogPage}"
                 Route="CatalogPage" />
         </Tab>
+        <Tab Title="Trợ Lý AI" Icon="chat.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:AssistantPage}"
+                Route="AssistantPage" />
+        </Tab>
     </TabBar>
 
 </Shell>

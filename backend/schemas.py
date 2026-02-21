@@ -64,3 +64,10 @@ class Rule(RuleBase):
 
     class Config:
         from_attributes = True
+
+class ChatRequest(BaseModel):
+    message: str
+    image_base64: Optional[str] = None
+
+class ChatResponse(BaseModel):
+    reply: str

@@ -203,6 +203,72 @@
         .nav-item.active {
             color: var(--accent);
         }
+
+        /* Chat Styles */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-height: 450px;
+            overflow-y: auto;
+            padding-bottom: 20px;
+        }
+
+        .chat-bubble {
+            max-width: 80%;
+            padding: 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .chat-incoming {
+            background-color: var(--card-bg);
+            color: white;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .chat-outgoing {
+            background-color: var(--text-secondary);
+            color: var(--bg-color);
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+            font-weight: bold;
+        }
+
+        .chat-input-area {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            background-color: var(--card-bg);
+            padding: 10px;
+            border-radius: 15px;
+            align-items: center;
+        }
+
+        .chat-input {
+            flex: 1;
+            background-color: transparent;
+            border: none;
+            color: white;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .chat-btn {
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .chat-btn-send {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 16px;
+        }
     </style>
 </head>
 
@@ -216,6 +282,7 @@
         <div class="tabs">
             <div class="tab active" onclick="showPage('home')">Trang Chủ</div>
             <div class="tab" onclick="showPage('catalog')">Bách Khoa</div>
+            <div class="tab" onclick="showPage('chat')">Trợ Lý AI</div>
         </div>
 
         <main id="home-page">
@@ -330,21 +397,81 @@
             </div>
         </main>
 
+        <main id="chat-page" style="display: none; padding-bottom: 80px;">
+            <div class="chat-container" id="chat-history">
+                <div class="chat-bubble chat-incoming">
+                    🤖 Chào bác! Em là Trợ Lý AI. Bác cần hỏi gì về mồi, trục thẻo hay muốn em kiểm tra mồi bằng hình
+                    ảnh thì nhắn em nhé! (Kịch bản demo hỗ trợ upload ảnh giả lập)
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <button class="chat-btn" onclick="alert('Đã chọn một ảnh mồi câu (Demo)')">📷</button>
+                <input type="text" id="chat-input" class="chat-input" placeholder="Hỏi mồi, thẻo, điểm câu..."
+                    onkeypress="if(event.key === 'Enter') sendChat()">
+                <button class="chat-btn chat-btn-send" onclick="sendChat()">GỬI</button>
+            </div>
+        </main>
+
         <footer>
-            <div class="nav-item active">🏠<br>Home</div>
-            <div class="nav-item">📖<br>Bách Khoa</div>
-            <div class="nav-item">📈<br>Sinh Học</div>
+            <div class="nav-item active" onclick="showPage('home')">🏠<br>Home</div>
+            <div class="nav-item" onclick="showPage('catalog')">📖<br>Bách Khoa</div>
+            <div class="nav-item" onclick="showPage('chat')">🗨️<br>Trợ Lý</div>
         </footer>
     </div>
-
     <script>
         function showPage(page) {
             document.getElementById('home-page').style.display = page === 'home' ? 'flex' : 'none';
             document.getElementById('catalog-page').style.display = page === 'catalog' ? 'flex' : 'none';
+            document.getElementById('chat-page').style.display = page === 'chat' ? 'flex' : 'none';
 
             const tabs = document.querySelectorAll('.tab');
             tabs[0].classList.toggle('active', page === 'home');
             tabs[1].classList.toggle('active', page === 'catalog');
+            tabs[2].classList.toggle('active', page === 'chat');
+
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems[0].classList.toggle('active', page === 'home');
+            navItems[1].classList.toggle('active', page === 'catalog');
+            navItems[2].classList.toggle('active', page === 'chat');
+        }
+
+        function sendChat() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            const chatHistory = document.getElementById('chat-history');
+
+            // Add outgoing
+            const outgoingNode = document.createElement('div');
+            outgoingNode.className = 'chat-bubble chat-outgoing';
+            outgoingNode.innerText = message;
+            chatHistory.appendChild(outgoingNode);
+
+            input.value = '';
+
+            // Scroll to bottom
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+
+            // Simulate AI logic
+            setTimeout(() => {
+                let reply = "🤖 Chào bác! Em là Trợ Lý AI. Chúc bác đi câu mỏi tay nhé!";
+                let msgLow = message.toLowerCase();
+                if (msgLow.includes('mồi')) {
+                    reply = "🎣 Nguyên tắc vàng mùa Nóng: dùng mồi có vị ngũ cốc lên men, chua thơm (ổi, dâu). Nếu đánh đáy tĩnh thì thêm chút tanh nhẹ.";
+                } else if (msgLow.includes('chép')) {
+                    reply = "🐟 Cá Chép rất khôn. Xả ổ êm, vê mồi tròn mềm. Dùng phao ăn chì 1.5 - 2g là chuẩn nhất bác ạ!";
+                } else if (msgLow.includes('thẻo') || msgLow.includes('trục')) {
+                    reply = "📏 Đánh Đài, Trục 2.0 Thẻo 1.2 là thông số chuẩn cho hàng 2-5kg. Cân 5 câu 3 nhé bác.";
+                }
+
+                const incomingNode = document.createElement('div');
+                incomingNode.className = 'chat-bubble chat-incoming';
+                incomingNode.innerText = reply;
+                chatHistory.appendChild(incomingNode);
+                chatHistory.scrollTop = chatHistory.scrollHeight;
+            }, 600);
         }
     </script>
 </body>

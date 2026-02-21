@@ -74,7 +74,7 @@ def read_rules(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return rules
 
 # --- Services ---
-from services import RecommendationService
+from services import RecommendationService, ChatService
 import math
 import random
 
@@ -99,4 +99,10 @@ def get_biorhythm(fish_id: int):
 @app.get("/catalog/")
 def get_catalog(fish: str = None, season: str = None, db: Session = Depends(get_db)):
     return RecommendationService.get_fish_catalog(db, fish, season)
+
+@app.post("/chat/", response_model=schemas.ChatResponse)
+def ai_chat(request: schemas.ChatRequest):
+    has_image = bool(request.image_base64)
+    reply = ChatService.get_ai_response(request.message, has_image)
+    return schemas.ChatResponse(reply=reply)
 

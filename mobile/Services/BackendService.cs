@@ -68,5 +68,26 @@ namespace SatNguApp.Mobile.Services
                 return new();
             }
         }
+
+        public async Task<ChatResponse> SendChatMessageAsync(string message, string imageBase64 = null)
+        {
+            try
+            {
+#if WINDOWS
+                return new ChatResponse { Reply = "🤖 (DEMO WINDOWS) Bác đã gửi tin nhắn. Trong bản Demo Windows không gọi Internet để tránh lỗi mạng. Trục thẻo thế nào bác cứ hỏi nhé!" };
+#else
+                var request = new ChatRequest { Message = message, Image_Base64 = imageBase64 };
+                var response = await _httpClient.PostAsJsonAsync($"{BaseUrl}/chat/", request);
+                response.EnsureSuccessStatusCode();
+                var result = await response.Content.ReadFromJsonAsync<ChatResponse>();
+                return result ?? new ChatResponse { Reply = "Có lỗi xảy ra khi kết nối máy chủ AI." };
+#endif
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error sending chat: {ex.Message}");
+                return new ChatResponse { Reply = "Lỗi kết nối mạng: " + ex.Message };
+            }
+        }
     }
 }

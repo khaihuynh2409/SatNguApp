@@ -33,4 +33,15 @@ namespace SatNguApp.Mobile.Models
         public Dictionary<string, double> Hourly_Activity { get; set; } = new();
         public string Advice { get; set; } = string.Empty;
     }
+
+    public class ChatRequest
+    {
+        public string Message { get; set; } = string.Empty;
+        public string? Image_Base64 { get; set; }
+    }
+
+    public class ChatResponse
+    {
+        public string Reply { get; set; } = string.Empty;
+    }
 }
