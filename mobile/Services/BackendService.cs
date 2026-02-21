@@ -1,5 +1,6 @@
 using System.Net.Http.Json;
 using SatNguApp.Mobile.Models;
+using System.Globalization;
 
 namespace SatNguApp.Mobile.Services
 {
@@ -26,7 +27,7 @@ namespace SatNguApp.Mobile.Services
         {
             try
             {
-                var response = await _httpClient.GetFromJsonAsync($"{BaseUrl}/recommendation/?lat={lat}&lon={lon}", ApiJsonContext.Default.ComboRecommendationResponse);
+                var response = await _httpClient.GetFromJsonAsync($"{BaseUrl}/recommendation/?lat={lat.ToString(CultureInfo.InvariantCulture)}&lon={lon.ToString(CultureInfo.InvariantCulture)}", ApiJsonContext.Default.ComboRecommendationResponse);
                 return response;
             }
             catch (Exception ex)

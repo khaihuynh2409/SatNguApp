@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SatNguApp.Mobile")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+0aeb58c0a2c701acc5a19baa1ca7daa3e6224554")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+872c082051f875ebb4c505258095c31638717dcf")]
 [assembly: System.Reflection.AssemblyProductAttribute("SatNguApp.Mobile")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SatNguApp.Mobile")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

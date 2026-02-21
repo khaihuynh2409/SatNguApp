@@ -64,7 +64,7 @@
 0x47daf4e1afbada10 di:64 mi:64 do:3149592 ds:9969 ddo:0 dds:0 cdo:0 cds:0 pt/Microsoft.Maui.Controls.resources
 0x49e952f19a4e2022 di:23 mi:23 do:544994 ds:10021 ddo:0 dds:0 cdo:0 cds:0 System.ObjectModel
 0x4b7b6532ded934b7 di:32 mi:32 do:874445 ds:190380 ddo:0 dds:0 cdo:0 cds:0 System.Text.Json
-0x4bad9c8bcf417616 di:128 mi:128 do:6109574 ds:63327 ddo:0 dds:0 cdo:0 cds:0 SatNguApp.Mobile
+0x4bad9c8bcf417616 di:128 mi:128 do:6109574 ds:63382 ddo:0 dds:0 cdo:0 cds:0 SatNguApp.Mobile
 0x4c2029a97af23a8d di:108 mi:108 do:5516429 ds:6407 ddo:0 dds:0 cdo:0 cds:0 Xamarin.AndroidX.Lifecycle.ViewModelSavedState.Android
 0x4c7755cf07ad2d5f di:18 mi:18 do:430839 ds:12821 ddo:0 dds:0 cdo:0 cds:0 System.Net.Http.Json.dll
 0x4d479f968a05e504 di:15 mi:15 do:222787 ds:167735 ddo:0 dds:0 cdo:0 cds:0 System.Linq.Expressions.dll
@@ -227,7 +227,7 @@
 0xdbf9607a441b4505 di:16 mi:16 do:390522 ds:31564 ddo:0 dds:0 cdo:0 cds:0 System.Linq
 0xdce2c53525640bf3 di:84 mi:84 do:3337671 ds:11242 ddo:0 dds:0 cdo:0 cds:0 Microsoft.Extensions.Logging
 0xdd2b722d78ef5f43 di:29 mi:29 do:786852 ds:6190 ddo:0 dds:0 cdo:0 cds:0 System.Runtime.dll
-0xde43778ce63b3a76 di:128 mi:128 do:6109574 ds:63327 ddo:0 dds:0 cdo:0 cds:0 SatNguApp.Mobile.dll
+0xde43778ce63b3a76 di:128 mi:128 do:6109574 ds:63382 ddo:0 dds:0 cdo:0 cds:0 SatNguApp.Mobile.dll
 0xde8769ebda7d8647 di:53 mi:53 do:3039797 ds:9991 ddo:0 dds:0 cdo:0 cds:0 hr/Microsoft.Maui.Controls.resources.dll
 0xe0142572c095a480 di:95 mi:95 do:4987094 ds:150548 ddo:0 dds:0 cdo:0 cds:0 Xamarin.AndroidX.AppCompat.dll
 0xe02f89350ec78051 di:99 mi:99 do:5164252 ds:21491 ddo:0 dds:0 cdo:0 cds:0 Xamarin.AndroidX.CoordinatorLayout.dll

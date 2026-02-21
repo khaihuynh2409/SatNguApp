@@ -1,5 +1,5 @@
-<api type="release" assembly-name="SatNguApp.Mobile" mvid="ea89be086e064c32a28c8848668e8a3b">
-  <module assembly-name="SatNguApp.Mobile" mvid="ea89be086e064c32a28c8848668e8a3b" mvid-bytes="CL6J6gZuMkyijIhIZo6KOw==">
+<api type="release" assembly-name="SatNguApp.Mobile" mvid="ce4ab5f1112d4e7a917d497c8389d8c2">
+  <module assembly-name="SatNguApp.Mobile" mvid="ce4ab5f1112d4e7a917d497c8389d8c2" mvid-bytes="8bVKzi0Rek6RfUl8g4nYwg==">
     <types-scratch>
       <entry key="crc64cbf3a61fe19a0178/MainActivity" java-name="crc64cbf3a61fe19a0178/MainActivity" managed-type-name="SatNguApp.Mobile.MainActivity" token="33554445" />
       <entry key="crc64cbf3a61fe19a0178/MainApplication" java-name="crc64cbf3a61fe19a0178/MainApplication" managed-type-name="SatNguApp.Mobile.MainApplication" token="33554446" />
