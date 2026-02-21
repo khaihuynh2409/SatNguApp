@@ -21,6 +21,9 @@ namespace SatNguApp.Mobile.Models
     {
         public string Fish_Target { get; set; } = string.Empty;
         public string Gear { get; set; } = string.Empty;
+        public string Axis_Line { get; set; } = string.Empty;
+        public string Leader { get; set; } = string.Empty;
+        public string Hook { get; set; } = string.Empty;
         public string Bait { get; set; } = string.Empty;
     }
 

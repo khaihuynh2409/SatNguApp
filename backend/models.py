@@ -39,3 +39,8 @@ class Rule(Base):
     bait_id = Column(Integer, ForeignKey("baits.id"))
     weather_condition = Column(String, nullable=True) # e.g., "nóng", "lạnh"
     tide_condition = Column(String, nullable=True) # e.g., "nước lớn", "nước ròng"
+    season = Column(String, nullable=True) # e.g., "Xuân", "Hạ", "Thu", "Đông"
+    month = Column(Integer, nullable=True)
+    time_of_day = Column(String, nullable=True) # e.g., "Sáng", "Trưa", "Chiều", "Tối"
+    hook_advice = Column(String, nullable=True) # e.g., "Size 10, có ngạnh"
+    leader_advice = Column(String, nullable=True) # e.g., "Fluoro 0.3mm"

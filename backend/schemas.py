@@ -50,6 +50,11 @@ class RuleBase(BaseModel):
     bait_id: int
     weather_condition: Optional[str] = None
     tide_condition: Optional[str] = None
+    season: Optional[str] = None
+    month: Optional[int] = None
+    time_of_day: Optional[str] = None
+    hook_advice: Optional[str] = None
+    leader_advice: Optional[str] = None
 
 class RuleCreate(RuleBase):
     pass

@@ -6,9 +6,17 @@
     xmlns:local="clr-namespace:SatNguApp.Mobile"
     Title="SatNguApp.Mobile">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <Tab Title="Trang Chủ" Icon="home.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+        <Tab Title="Bách Khoa" Icon="book.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:CatalogPage}"
+                Route="CatalogPage" />
+        </Tab>
+    </TabBar>
 
 </Shell>

@@ -95,3 +95,8 @@ def get_biorhythm(fish_id: int):
         "hourly_activity": dict(zip(hours, activity_levels)),
         "advice": "Mùa lạnh cá nằm đáy ấm, cần câu mồi protein cao. Mùa hè cá đi lửng thích mồi thơm chua ngọt."
     }
+
+@app.get("/catalog/")
+def get_catalog(fish: str = None, season: str = None, db: Session = Depends(get_db)):
+    return RecommendationService.get_fish_catalog(db, fish, season)
+

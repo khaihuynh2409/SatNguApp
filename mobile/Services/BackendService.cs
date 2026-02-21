@@ -22,9 +22,17 @@ namespace SatNguApp.Mobile.Services
 #if WINDOWS
                 return new ComboRecommendationResponse
                 {
-                    Recommendation = new Recommendation { Fish_Target = "Cá Tra / Cá Lăng", Gear = "Cần Echo bạo lực, Thẻo dù 0.4", Bait = "Cám cá tanh + Cốt dừa" },
+                    Recommendation = new Recommendation 
+                    { 
+                        Fish_Target = "Cá Tra / Cá Lăng (Sông Tiền)", 
+                        Gear = "Cần Echo bạo lực, Máy size 5000",
+                        Axis_Line = "Trục dù Pe 4.0",
+                        Leader = "Thẻo dù 0.4 hoặc Fluoro 0.5",
+                        Hook = "Lưỡi săn hàng size 10, có ngạnh",
+                        Bait = "Cám cá tanh + Cốt dừa" 
+                    },
                     Context = new WeatherContext { Temperature = 30, Weather_Condition = "Nắng nhẹ", Tide_Condition = "Nước đang lớn" },
-                    Message = "DỮ LIỆU DEMO (WINDOWS)"
+                    Message = "DỮ LIỆU DEMO NÂNG CẤP (WINDOWS)"
                 };
 #else
                 var response = await _httpClient.GetFromJsonAsync<ComboRecommendationResponse>($"{BaseUrl}/recommendation/?lat={lat}&lon={lon}");

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SÁT NGƯ - TRỢ LÝ CẦN THỦ (DEMO)</title>
+    <title>SÁT NGƯ - TRỢ LÝ CẦN THỦ (DEMO V2)</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -31,6 +32,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
         header {
@@ -53,18 +55,41 @@
             font-size: 12px;
         }
 
+        .tabs {
+            display: flex;
+            background-color: var(--card-bg);
+            padding: 10px;
+            justify-content: space-around;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tab {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 5px 15px;
+            border-radius: 10px;
+        }
+
+        .tab.active {
+            background-color: var(--bg-color);
+            color: var(--accent);
+        }
+
         main {
             padding: 20px;
             display: flex;
             flex-direction: column;
             gap: 20px;
+            padding-bottom: 100px;
         }
 
         .card {
             background-color: var(--card-bg);
             border-radius: 20px;
             padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -74,10 +99,6 @@
             display: flex;
             align-items: center;
             gap: 15px;
-        }
-
-        .icon-circle {
-            font-size: 24px;
         }
 
         .card-title-group h2 {
@@ -99,72 +120,51 @@
             background-color: var(--border);
         }
 
-        .detail-row {
+        .gear-section {
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 12px;
         }
 
-        .detail-label {
-            color: var(--accent);
-            font-size: 14px;
-            font-weight: 700;
+        .gear-row {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 10px;
+            align-items: baseline;
         }
 
-        .detail-value {
-            font-size: 15px;
-        }
-
-        .context-box {
-            background-color: var(--bg-color);
-            border-radius: 10px;
-            padding: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .context-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .context-icon { font-size: 18px; }
-        .context-val { font-weight: 700; font-size: 14px; }
-
-        .biorhythm-card h3 {
-            color: var(--accent);
-            font-size: 14px;
-            margin: 0;
-            font-weight: 700;
-        }
-
-        .advice {
-            color: var(--text-accent);
+        .gear-label {
+            color: var(--text-secondary);
             font-size: 13px;
-            font-style: italic;
-            margin-top: 10px;
         }
 
-        .chart {
+        .gear-value {
+            font-size: 14px;
+        }
+
+        .accent-label {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .catalog-filter {
+            background-color: var(--card-bg);
+            padding: 15px;
+            border-radius: 15px;
             display: flex;
-            align-items: flex-end;
-            gap: 4px;
-            height: 100px;
-            margin: 20px 0;
-            padding-bottom: 5px;
+            gap: 10px;
         }
 
-        .bar {
+        select {
             flex: 1;
-            background-color: var(--text-secondary);
-            border-radius: 4px 4px 0 0;
-        }
-
-        .bar.high {
-            background-color: var(--accent);
+            background-color: var(--bg-color);
+            color: white;
+            border: 1px solid var(--border);
+            padding: 8px;
+            border-radius: 8px;
+            outline: none;
         }
 
         .btn {
@@ -176,21 +176,36 @@
             font-weight: 700;
             font-size: 16px;
             cursor: pointer;
-            margin-top: 10px;
             transition: transform 0.2s;
         }
 
-        .btn:hover {
-            transform: scale(1.02);
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            max-width: 450px;
+            background-color: var(--card-bg);
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            border-top: 1px solid var(--border);
         }
 
-        .footer-note {
-            color: var(--border);
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
             font-size: 10px;
-            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .nav-item.active {
+            color: var(--accent);
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -198,72 +213,101 @@
             <p>Vị trí: 10.2500, 106.3000 (Sông Tiền)</p>
         </header>
 
-        <main>
-            <!-- Recommendation -->
+        <div class="tabs">
+            <div class="tab active" onclick="showPage('home')">Trang Chủ</div>
+            <div class="tab" onclick="showPage('catalog')">Bách Khoa</div>
+        </div>
+
+        <main id="home-page">
             <div class="card">
                 <div class="card-header">
-                    <div class="icon-circle">🎯</div>
+                    <div style="font-size: 24px;">🎯</div>
                     <div class="card-title-group">
                         <h2>Mục tiêu hôm nay</h2>
-                        <p>Cá Tra / Cá Lăng</p>
+                        <p>Cá Tra / Cá Lăng (Sông Tiền)</p>
                     </div>
                 </div>
 
                 <div class="divider"></div>
 
-                <div class="detail-row">
-                    <div class="detail-label">🎣 BỘ ĐỒ CÂU TỐI ƯU</div>
-                    <div class="detail-value">Cần Echo bạo lực, Thẻo dù 0.4</div>
-                </div>
+                <div class="gear-section">
+                    <div class="accent-label">🎣 BỘ ĐỒ CÂU TỐI ƯU</div>
 
-                <div class="detail-row">
-                    <div class="detail-label">🪱 BÍ QUYẾT MỒI CÂU</div>
-                    <div class="detail-value">Cám cá tanh + Cốt dừa</div>
-                </div>
-
-                <div class="context-box">
-                    <div class="context-item">
-                        <span class="context-icon">🌡️</span>
-                        <span class="context-val">30°C</span>
+                    <div class="gear-row">
+                        <span class="gear-label">Cần & Máy:</span>
+                        <span class="gear-value">Echo 2m7, bạo lực, Máy size 5000</span>
                     </div>
-                    <div class="context-item">
-                        <span class="context-icon">🌊</span>
-                        <span class="context-val">Nước đang lớn</span>
+                    <div class="gear-row">
+                        <span class="gear-label">Dây Trục:</span>
+                        <span class="gear-value">Dù PE 4.0 - siêu bền</span>
                     </div>
-                    <div class="context-item">
-                        <span class="context-icon">☁️</span>
-                        <span class="context-val">Nắng nhẹ</span>
+                    <div class="gear-row">
+                        <span class="gear-label">Thẻo & Lưỡi:</span>
+                        <span class="gear-value">
+                            Thẻo dù 0.4 <span style="color:var(--text-secondary)">| Lưỡi:</span> <b>Size 10, có
+                                ngạnh</b>
+                        </span>
                     </div>
                 </div>
-            </div>
 
-            <!-- Biorhythm -->
-            <div class="card biorhythm-card">
-                <h3>🔴 ĐỒNG HỒ SINH HỌC (BIỂU ĐỒ CẮN CÂU)</h3>
-                <p class="advice">Khung giờ vàng: Cá cắn mạnh nhất từ 07:00 - 09:00 sáng. Nên đánh tầng đáy.</p>
-                
-                <div class="chart">
-                    <div class="bar" style="height: 40%;"></div>
-                    <div class="bar" style="height: 60%;"></div>
-                    <div class="bar high" style="height: 80%;"></div>
-                    <div class="bar high" style="height: 95%;"></div>
-                    <div class="bar" style="height: 70%;"></div>
-                    <div class="bar" style="height: 45%;"></div>
-                    <div class="bar" style="height: 25%;"></div>
-                    <div class="bar" style="height: 35%;"></div>
-                    <div class="bar" style="height: 55%;"></div>
-                    <div class="bar high" style="height: 85%;"></div>
+                <div class="gear-section">
+                    <div class="accent-label">🪱 BÍ QUYẾT MỒI CÂU</div>
+                    <div class="gear-value">Cám cá tanh + Cốt dừa (Đánh tầng đáy)</div>
                 </div>
-
-                <p style="text-align: center; font-size: 11px; color: var(--text-secondary); margin: 0;">
-                    Giai đoạn Cá cắn mạnh nhất: 06:00 - 09:00
-                </p>
             </div>
 
             <button class="btn">CẬP NHẬT GỢI Ý MỚI</button>
-
-            <p class="footer-note">* Dữ liệu DEMO được mô phỏng cho phiên bản chạy trên máy tính.</p>
         </main>
+
+        <main id="catalog-page" style="display: none;">
+            <div class="catalog-filter">
+                <select id="fish-select">
+                    <option>Chọn loài cá</option>
+                    <option selected>Cá Tra</option>
+                    <option>Cá Chép</option>
+                    <option>Cá Rô Phi</option>
+                </select>
+                <select id="season-select">
+                    <option>Mùa</option>
+                    <option selected>Mùa Hạ</option>
+                    <option>Mùa Đông</option>
+                </select>
+            </div>
+
+            <div class="card">
+                <div class="card-title-group">
+                    <h2 style="color: var(--accent)">COMBO SĂN HÀNG - MÙA HẠ</h2>
+                    <p style="font-size: 16px;">Bộ đồ câu cho Cá Tra Sông</p>
+                </div>
+                <div class="divider"></div>
+                <ul
+                    style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+                    <li>• <b>Cần:</b> 2m7 - 3m0, độ cứng MH trở lên</li>
+                    <li>• <b>Trục:</b> Dây PE 4.0 mạ láng</li>
+                    <li>• <b>Thẻo:</b> Dây dù carbon 0.4 chịu tải 20kg</li>
+                    <li>• <b>Lưỡi:</b> Lưỡi mác size 12, chống vặn</li>
+                    <li>• <b>Mồi:</b> Cám tanh + nước cốt dừa + bơ</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <div class="nav-item active">🏠<br>Home</div>
+            <div class="nav-item">📖<br>Bách Khoa</div>
+            <div class="nav-item">📈<br>Sinh Học</div>
+        </footer>
     </div>
+
+    <script>
+        function showPage(page) {
+            document.getElementById('home-page').style.display = page === 'home' ? 'flex' : 'none';
+            document.getElementById('catalog-page').style.display = page === 'catalog' ? 'flex' : 'none';
+
+            const tabs = document.querySelectorAll('.tab');
+            tabs[0].classList.toggle('active', page === 'home');
+            tabs[1].classList.toggle('active', page === 'catalog');
+        }
+    </script>
 </body>
+
 </html>
